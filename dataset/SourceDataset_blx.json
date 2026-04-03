@@ -1,0 +1,19 @@
+{
+	"name": "SourceDataset_blx",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "day.csv",
+				"container": "container1"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

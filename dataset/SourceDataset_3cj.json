@@ -1,0 +1,19 @@
+{
+	"name": "SourceDataset_3cj",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "month.csv",
+				"container": "container2"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

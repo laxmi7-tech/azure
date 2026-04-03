@@ -1,0 +1,9 @@
+{
+	"name": "lucky16",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ca34233f-90fd-47e0-9781-0bac27bb81db",
+		"tenantId": "6d2c9e25-48a4-44c7-a31c-b20ceacc6a18"
+	}
+}

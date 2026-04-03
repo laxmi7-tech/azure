@@ -1,0 +1,19 @@
+{
+	"name": "DestinationDataset_blx",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "output.csv.xlsx",
+				"container": "container1"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
