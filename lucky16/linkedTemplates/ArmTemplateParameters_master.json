@@ -1,0 +1,69 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "lucky16"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase2_password": {
+			"value": ""
+		},
+		"ls_rawtostage_connectionString": {
+			"value": ""
+		},
+		"ls_sqlDB_password": {
+			"value": ""
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://credentials1.vault.azure.net/"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "myserver06.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "mydb"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "lucky"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_server": {
+			"value": "lucky.database.windows.net"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_database": {
+			"value": "mydb1"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_userName": {
+			"value": "lucky"
+		},
+		"AzureSqlDatabase3_properties_typeProperties_server": {
+			"value": "lucky.database.windows.net"
+		},
+		"AzureSqlDatabase3_properties_typeProperties_database": {
+			"value": "mydb1"
+		},
+		"AzureSqlDatabase3_properties_typeProperties_userName": {
+			"value": "lucky"
+		},
+		"ls_sqlDB_properties_typeProperties_server": {
+			"value": "lucky.database.windows.net"
+		},
+		"ls_sqlDB_properties_typeProperties_database": {
+			"value": "master"
+		},
+		"ls_sqlDB_properties_typeProperties_userName": {
+			"value": "lucky"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
