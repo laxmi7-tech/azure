@@ -1,0 +1,40 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sqlDB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "UsageDate",
+				"type": "varchar"
+			},
+			{
+				"name": "CostUSD",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "Cost",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "ForecastCost",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "Currency",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "Staging",
+			"table": "stg_cost"
+		}
+	}
+}
