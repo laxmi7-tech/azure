@@ -8,16 +8,28 @@
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
 		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
 		"AzureSqlDatabase1_password": {
 			"value": ""
 		},
 		"AzureSqlDatabase2_password": {
 			"value": ""
 		},
+		"AzureSqlDatabase4_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase5_password": {
+			"value": ""
+		},
 		"ls_rawtostage_connectionString": {
 			"value": ""
 		},
 		"ls_sqlDB_password": {
+			"value": ""
+		},
+		"staging_password": {
 			"value": ""
 		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
@@ -50,13 +62,40 @@
 		"AzureSqlDatabase3_properties_typeProperties_userName": {
 			"value": "lucky"
 		},
+		"AzureSqlDatabase4_properties_typeProperties_server": {
+			"value": "lucky.database.windows.net"
+		},
+		"AzureSqlDatabase4_properties_typeProperties_database": {
+			"value": "master"
+		},
+		"AzureSqlDatabase4_properties_typeProperties_userName": {
+			"value": "lucky"
+		},
+		"AzureSqlDatabase5_properties_typeProperties_server": {
+			"value": "lucky.database.windows.net"
+		},
+		"AzureSqlDatabase5_properties_typeProperties_database": {
+			"value": "master"
+		},
+		"AzureSqlDatabase5_properties_typeProperties_userName": {
+			"value": "lucky"
+		},
 		"ls_sqlDB_properties_typeProperties_server": {
 			"value": "lucky.database.windows.net"
 		},
 		"ls_sqlDB_properties_typeProperties_database": {
-			"value": "master"
+			"value": "mydb1"
 		},
 		"ls_sqlDB_properties_typeProperties_userName": {
+			"value": "lucky"
+		},
+		"staging_properties_typeProperties_server": {
+			"value": "lucky.database.windows.net"
+		},
+		"staging_properties_typeProperties_database": {
+			"value": "master"
+		},
+		"staging_properties_typeProperties_userName": {
 			"value": "lucky"
 		},
 		"containerUri": {

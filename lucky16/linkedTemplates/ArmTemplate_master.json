@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
 		},
+		"AzureBlobStorage2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
+		},
 		"AzureSqlDatabase1_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'AzureSqlDatabase1'"
@@ -19,6 +23,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'AzureSqlDatabase2'"
 		},
+		"AzureSqlDatabase4_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase4'"
+		},
+		"AzureSqlDatabase5_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase5'"
+		},
 		"ls_rawtostage_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_rawtostage'"
@@ -26,6 +38,10 @@
 		"ls_sqlDB_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'ls_sqlDB'"
+		},
+		"staging_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'staging'"
 		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"type": "string",
@@ -67,15 +83,51 @@
 			"type": "string",
 			"defaultValue": "lucky"
 		},
+		"AzureSqlDatabase4_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "lucky.database.windows.net"
+		},
+		"AzureSqlDatabase4_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "master"
+		},
+		"AzureSqlDatabase4_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "lucky"
+		},
+		"AzureSqlDatabase5_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "lucky.database.windows.net"
+		},
+		"AzureSqlDatabase5_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "master"
+		},
+		"AzureSqlDatabase5_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "lucky"
+		},
 		"ls_sqlDB_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "lucky.database.windows.net"
 		},
 		"ls_sqlDB_properties_typeProperties_database": {
 			"type": "string",
-			"defaultValue": "master"
+			"defaultValue": "mydb1"
 		},
 		"ls_sqlDB_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "lucky"
+		},
+		"staging_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "lucky.database.windows.net"
+		},
+		"staging_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "master"
+		},
+		"staging_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "lucky"
 		},
@@ -109,8 +161,17 @@
 					"AzureBlobStorage1_connectionString": {
 						"value": "[parameters('AzureBlobStorage1_connectionString')]"
 					},
+					"AzureBlobStorage2_connectionString": {
+						"value": "[parameters('AzureBlobStorage2_connectionString')]"
+					},
 					"AzureSqlDatabase2_password": {
 						"value": "[parameters('AzureSqlDatabase2_password')]"
+					},
+					"AzureSqlDatabase4_password": {
+						"value": "[parameters('AzureSqlDatabase4_password')]"
+					},
+					"AzureSqlDatabase5_password": {
+						"value": "[parameters('AzureSqlDatabase5_password')]"
 					},
 					"ls_rawtostage_connectionString": {
 						"value": "[parameters('ls_rawtostage_connectionString')]"
@@ -118,8 +179,8 @@
 					"ls_sqlDB_password": {
 						"value": "[parameters('ls_sqlDB_password')]"
 					},
-					"AzureSqlDatabase1_password": {
-						"value": "[parameters('AzureSqlDatabase1_password')]"
+					"staging_password": {
+						"value": "[parameters('staging_password')]"
 					},
 					"AzureKeyVault1_properties_typeProperties_baseUrl": {
 						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
@@ -133,6 +194,24 @@
 					"AzureSqlDatabase2_properties_typeProperties_userName": {
 						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_userName')]"
 					},
+					"AzureSqlDatabase4_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase4_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase4_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase4_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase4_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase4_properties_typeProperties_userName')]"
+					},
+					"AzureSqlDatabase5_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase5_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase5_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase5_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase5_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase5_properties_typeProperties_userName')]"
+					},
 					"ls_sqlDB_properties_typeProperties_server": {
 						"value": "[parameters('ls_sqlDB_properties_typeProperties_server')]"
 					},
@@ -142,23 +221,14 @@
 					"ls_sqlDB_properties_typeProperties_userName": {
 						"value": "[parameters('ls_sqlDB_properties_typeProperties_userName')]"
 					},
-					"AzureSqlDatabase1_properties_typeProperties_server": {
-						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_server')]"
+					"staging_properties_typeProperties_server": {
+						"value": "[parameters('staging_properties_typeProperties_server')]"
 					},
-					"AzureSqlDatabase1_properties_typeProperties_database": {
-						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_database')]"
+					"staging_properties_typeProperties_database": {
+						"value": "[parameters('staging_properties_typeProperties_database')]"
 					},
-					"AzureSqlDatabase1_properties_typeProperties_userName": {
-						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_userName')]"
-					},
-					"AzureSqlDatabase3_properties_typeProperties_server": {
-						"value": "[parameters('AzureSqlDatabase3_properties_typeProperties_server')]"
-					},
-					"AzureSqlDatabase3_properties_typeProperties_database": {
-						"value": "[parameters('AzureSqlDatabase3_properties_typeProperties_database')]"
-					},
-					"AzureSqlDatabase3_properties_typeProperties_userName": {
-						"value": "[parameters('AzureSqlDatabase3_properties_typeProperties_userName')]"
+					"staging_properties_typeProperties_userName": {
+						"value": "[parameters('staging_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -177,6 +247,27 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureSqlDatabase1_password": {
+						"value": "[parameters('AzureSqlDatabase1_password')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_userName')]"
+					},
+					"AzureSqlDatabase3_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase3_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase3_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase3_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase3_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase3_properties_typeProperties_userName')]"
 					}
 				}
 			},
