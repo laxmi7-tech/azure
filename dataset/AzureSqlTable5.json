@@ -1,0 +1,40 @@
+{
+	"name": "AzureSqlTable5",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "staging",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "UsageDate",
+				"type": "date"
+			},
+			{
+				"name": "Cost",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CostUSD",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "ForecastCost",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "Currency",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "Fact",
+			"table": "FactCost2"
+		}
+	}
+}

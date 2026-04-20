@@ -1,0 +1,37 @@
+{
+	"name": "AzureSqlTable4",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "staging",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "UsageDate",
+				"type": "varchar"
+			},
+			{
+				"name": "CostUSD",
+				"type": "varchar"
+			},
+			{
+				"name": "Cost",
+				"type": "varchar"
+			},
+			{
+				"name": "ForecastCost",
+				"type": "varchar"
+			},
+			{
+				"name": "Currency",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "Staging",
+			"table": "stg_cost"
+		}
+	}
+}

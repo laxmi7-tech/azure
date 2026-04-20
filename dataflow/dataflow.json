@@ -1,0 +1,78 @@
+{
+	"name": "dataflow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable4",
+						"type": "DatasetReference"
+					},
+					"name": "staging"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable5",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "derivedColumn1"
+				},
+				{
+					"name": "filter1"
+				},
+				{
+					"name": "aggregate1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          UsageDate as string,",
+				"          CostUSD as string,",
+				"          Cost as string,",
+				"          ForecastCost as string,",
+				"          Currency as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> staging",
+				"staging derive(Cost = iif(isNull(Cost) || trim(toString(Cost)) == '', toDouble(null()), toDouble(Cost)),",
+				"          CostUSD = iif(isNull(CostUSD) || trim(toString(CostUSD)) == '', toDouble(null()), toDouble(CostUSD)),",
+				"          ForecastCost = iif(isNull(ForecastCost) || trim(toString(ForecastCost)) == '', toDouble(null()), toDouble(ForecastCost)),",
+				"          UsageDate = toDate(toString(UsageDate)),",
+				"          Currency = iif(isNull(Currency) || trim(Currency) == '', 'UNKNOWN', trim(Currency))) ~> derivedColumn1",
+				"derivedColumn1 filter(!(isNull(Cost) && isNull(CostUSD) && isNull(ForecastCost))) ~> filter1",
+				"filter1 aggregate(groupBy(UsageDate,",
+				"          Currency),",
+				"     CostUSD = sum(CostUSD),",
+				"          ForecastCost = sum(ForecastCost),",
+				"          Cost = sum(Cost)) ~> aggregate1",
+				"aggregate1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          UsageDate as date,",
+				"          Cost as double,",
+				"          CostUSD as double,",
+				"          ForecastCost as double,",
+				"          Currency as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
+			]
+		}
+	}
+}
